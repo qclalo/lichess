@@ -7,7 +7,7 @@ function editPageHTML() {
     const myName = "glamour_loop999"
     if (window.location.href.indexOf(myName) > -1) {
     // if (true) {
-        let a = '<div class="trophies"><span class="trophy perf top10" title="King of the Hill Top 10!"><img src="https://lichess1.org/assets/_z7cHiT/images/trophy/Big-Silver-Cup.png"></span><span class="trophy perf top50" title="Horde Top 50 player!"><img src="https://lichess1.org/assets/_z7cHiT/images/trophy/Fancy-Gold.png"></span><span class="trophy perf top50" title="Racing Kings Top 50 player!"><img src="https://lichess1.org/assets/_z7cHiT/images/trophy/Fancy-Gold.png"></span><span class="trophy perf top50" title="UltraBullet Top 50 player!"><img src="https://lichess1.org/assets/_z7cHiT/images/trophy/Fancy-Gold.png"></span><span class="trophy perf top50" title="Three-check Top 50 player!"><img src="https://lichess1.org/assets/_z7cHiT/images/trophy/Fancy-Gold.png"></span><span class="trophy perf top50" title="Chess960 Top 50 player!"><img src="https://lichess1.org/assets/_z7cHiT/images/trophy/Fancy-Gold.png"></span></div>'
+        let a = '<div class="trophies"><span class="trophy perf top10" title="Horde Top 10!"><img src="https://lichess1.org/assets/_z7cHiT/images/trophy/Big-Silver-Cup.png"></span><span class="trophy perf top50" title="Atomic Top 50 player!"><img src="https://lichess1.org/assets/_z7cHiT/images/trophy/Fancy-Gold.png"></span></div>'
         document.body.innerHTML = document.body.innerHTML.replace('<div class="trophies"></div>', a);
         let b = '<span class="online user-link" data-href="/@/glamour_loop999"><i class="line"></i><span class="utitle" title="International Master">IM</span>&nbsp;glamour_loop999</span>'
         document.body.innerHTML = document.body.innerHTML.replace('<span class="online user-link" data-href="/@/glamour_loop999"><i class="line"></i>glamour_loop999</span>', b);
@@ -20,5 +20,5 @@ async function delayWithAsync() {
     console.log("After 2 seconds");
   }
   
-delayWithAsync();
+// delayWithAsync();
 editPageHTML();
