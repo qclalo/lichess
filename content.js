@@ -8,36 +8,38 @@ function editPageHTML() {
     let goldTrophy = "https://lichess1.org/assets/_z7cHiT/images/trophy/Fancy-Gold.png";
 
     if (window.location.href.indexOf(username) > -1) {
-        let a = '<div class="trophies">';
         let trophy1 =
             '<span class="trophy perf top10" title="Horde Top 10!">' +
             `<img src="${silverTrophy}"></span>`;
         let trophy2 =
             '<span class="trophy perf top50" title="Atomic Top 50 player!">' +
             `<img src="${goldTrophy}"></span>`;
+
+        let defaultTrophies = '<div class="trophies"></div>'
         let customTrophies = `<div class="trophies">${trophy1}${trophy2}</div>`;
 
         document.body.innerHTML = document.body.innerHTML.replace(
-            '<div class="trophies"></div>',
+            defaultTrophies,
             customTrophies
         );
 
-        let toReplace =
+        let defaultUsername =
             `<span class="online user-link" data-href="/@/${username}">` +
             `<i class="line"></i>${username}` +
             '<a href="/account/profile" title="Set your flair">' +
             `<img class="uflair" src="${myFlair}"></a></span>`;
 
-        let glamourLoop =
+        let customUsername =
             `<span class="online user-link" data-href="/@/${username}">` +
             '<i class="line"></i>' +
             '<span class="utitle" title="International Master">IM</span>&nbsp;' +
-            'glamour_loop999<a href="/account/profile" title="Set your flair">' +
+            username +
+            '<a href="/account/profile" title="Set your flair">' +
             `<img class="uflair" src="${myFlair}"></a></span>`;
 
         document.body.innerHTML = document.body.innerHTML.replace(
-            toReplace,
-            glamourLoop
+            defaultUsername,
+            customUsername
         );
     }
 }
