@@ -55,6 +55,56 @@ function editPageHTML() {
             }
         }
     }
+
+    addTitleToUserLink();
 }
+
+function addTitleToUserLink() {
+    // Select all div elements with the specified class
+    const userDivs = document.querySelectorAll('div.ruser-bottom.ruser.user-link.online');
+
+    // Iterate through each div
+    userDivs.forEach(div => {
+        // Select the <a> element with class 'user-link' inside the div
+        const userLink = div.querySelector('a.user-link');
+
+        // Check if the <a> element doesn't already have a <span class="utitle"> element
+        if (userLink && !userLink.querySelector('span.utitle')) {
+            // Create the new <span> element
+            const titleSpan = document.createElement('span');
+            titleSpan.className = 'utitle';
+            titleSpan.innerHTML = 'GM&nbsp;';
+
+            // Insert the <span> element into the <a> element
+            userLink.insertBefore(titleSpan, userLink.firstChild);
+        }
+    });
+}
+//
+// // Call the function to add the titles
+// addTitleToUserLink();
+
+function addTitleToSpecificUserLink() {
+    // Select all <a> elements with the specified class and href attribute
+    const userLinks = document.querySelectorAll('a.user-link.ulpt[href="/@/glamour_loop999"]');
+
+    // Iterate through each selected <a> element
+    userLinks.forEach(userLink => {
+        // Check if the <a> element does not already have a <span class="utitle"> element
+        if (!userLink.querySelector('span.utitle')) {
+            // Create the new <span> element
+            const titleSpan = document.createElement('span');
+            titleSpan.className = 'utitle';
+            titleSpan.innerHTML = 'GM&nbsp;';
+
+            // Insert the <span> element into the <a> element
+            userLink.insertBefore(titleSpan, userLink.firstChild);
+        }
+    });
+}
+
+// Call the function to add the titles
+addTitleToSpecificUserLink();
+
 
 editPageHTML();
