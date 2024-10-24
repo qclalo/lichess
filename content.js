@@ -45,3 +45,22 @@ function editPageHTML() {
 }
 
 editPageHTML();
+
+function addTitleLinkToUser() {
+    let userHref = "/@/glamour_loop999";
+    // Select all <a> elements with class 'user-link' and href equal to '/@/Uarekomodo9'
+    const userLinks = document.querySelectorAll(`a.user-link[href="${userHref}"]`);
+    
+    // Iterate through each <a> element
+    userLinks.forEach(userLink => {
+        // Create the new <span> element with the desired content
+        const titleLink = document.createElement('span');
+        titleLink.className = 'utitle';
+        titleLink.innerHTML = 'IM&nbsp;';
+        
+        // Insert the <span> element inside the <a> element as the first child
+        userLink.insertBefore(titleLink, userLink.firstChild);
+    });
+}
+
+addTitleLinkToUser();
