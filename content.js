@@ -4,7 +4,7 @@
 function editPageHTML() {
     let username = "glamour_loop999";
     let myFlair = "https://lichess1.org/assets/______2/flair/img/food-drink.ice.webp";
-    let silverTrophy = "https://lichess1.org/assets/_z7cHiT/images/trophy/Big-Silver-Cup.png";
+    let silverTrophy = "https://lichess1.org/assets/_GxVjh9/images/trophy/silver-cup-2.png";
     let goldTrophy = "https://lichess1.org/assets/_z7cHiT/images/trophy/Fancy-Gold.png";
 
     if (window.location.href.indexOf(username) > -1) {
